@@ -9,6 +9,9 @@ B='\033[0;34m'
 Y='\033[0;38m'       # Yellow
 C='\033[0;36m'       # Cyan
 W='\033[0;37m'       # White
+if [[ $EUID -ne 0 ]]; then
+   echo -e " ${C} This script must be run as root to install packages" 
+   exit 1
 apt install toilet -y >/dev/null
 apt install lynx -y >/dev/null
 clear
