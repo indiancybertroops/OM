@@ -12,6 +12,7 @@ W='\033[0;37m'       # White
 if [[ $EUID -ne 0 ]]; then
    echo -e " ${C} This script must be run as root to install packages" 
    exit 1
+   fi
 apt install toilet -y >/dev/null
 apt install lynx -y >/dev/null
 clear
